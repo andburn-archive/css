@@ -211,3 +211,17 @@ Browsers specify a **root** `font-size` for each page, usually 16px.
  With no cascaded value and no inheritance than the default initial value defined for the property will be used.
 
  Inheritance can be forced with the `inherit` keyword. The properties default value can also be forced with the `initial` keyword.
+
+ ### 3.18 - Pixel to `rem` Workflow
+
+Better to use relative units for responsive design. Using `em` can be difficult as it can require calculations on the parent and current element.
+
+A simpler solution is to use `rem` units and set a root `font-size` with the `html` selector. Calculations can be made easier by using `10px` as the root `font-size`, so that `1rem` is equal to `10px`, `3rem` is `30px` etc.
+
+This workflow greatly aids responsive designs, as the layout can be controlled by just the root `font-size` making media queries much simpler to define.
+
+Setting the root `font-size` in pixels is bad practice though as it will override any user styles. A better approach is to use a percentage of the browsers default size (generally `16px`), so setting root `font-size: 62.5%` will be equivalent to `10px` when the default browser value is used. This way any custom user styles will still have an effect.
+ 
+ It should be noted that `rem` units are not supported in IE 9 or below. There are some known issues with certain properties and browsers ([caniuse.com](https://caniuse.com/#feat=rem)).
+
+ 
