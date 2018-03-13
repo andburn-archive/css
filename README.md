@@ -222,6 +222,89 @@ This workflow greatly aids responsive designs, as the layout can be controlled b
 
 Setting the root `font-size` in pixels is bad practice though as it will override any user styles. A better approach is to use a percentage of the browsers default size (generally `16px`), so setting root `font-size: 62.5%` will be equivalent to `10px` when the default browser value is used. This way any custom user styles will still have an effect.
  
- It should be noted that `rem` units are not supported in IE 9 or below. There are some known issues with certain properties and browsers ([caniuse.com](https://caniuse.com/#feat=rem)).
+It should be noted that `rem` units are not supported in IE 9 or below. There are some known issues with certain properties and browsers ([caniuse.com](https://caniuse.com/#feat=rem)).
 
- 
+### 3.19 - The Visual Formatting Model
+
+Is the algorithm that calculates boxes and determines their layout, for each element in the render tree, producing the final layout of the page.
+
+There are four main factors for the visual formatting model to consider.
+
+#### Box Model
+
+The box model comprises of the content, padding, border and margin. The *Fill Area* is the space that is filled by background color or background images, it includes the content, padding and border areas. 
+
+By default the width and height of an element applies to the size of the content box only; padding, border and margin are added in addition to this.
+
+The default behavior can be changed by using the `box-sizing` property of an element. Using `box-sizing: border-box` means that width and height include padding and border values, in addition to the content. Making box dimensions simpler to work, it does have the consequence of shrinking the content box so all dimensions fit in the defined width and height.
+
+#### Box Type
+
+Each element has a default box type. It can also be set using the `display` property.
+
+```css
+display: block | inline | inline-block
+```
+
+**Block level boxes** use 100% of their parents width and are stacked vertically. The box model as described above applies directly.
+
+**Inline boxes** are displayed as lines, no line-breaks. They have no width or height and only take up the space required by the content. Padding and margins can be on the left and right only.
+
+**Inline Block boxes** a mixture of the previous two types. Occupies only the contents space with no line-breaks, but follows the box-model like a block element.
+
+
+#### Positioning
+
+```css
+position: relative | absolute | fixed
+float: left | right
+```
+
+**Normal Flow** is the default positioning scheme `position: relative`.
+
+**Floats** A floated element is removed from the normal flow. Text and inline elements will wrap around the floated element. The elements container will not adjust its height based on the float element.
+
+**Absolute** Removed from normal flow. Has no impact on surrounding content or elements. It is positioned inside its container using *top, bottom, left, right* properties.
+
+
+#### Stacking Context
+
+Some CSS properties can create stacking contexts, *i.e.* vertically stacked layers allowing elements to be drawn on top of one another.
+
+The most popular property is `z-index` where the higher the value the closer to the top of the stack the element is.
+
+Other properties such as `opacity`, `transform` and `filter` also create stacking contexts.
+
+### 3.20 - CSS Architecture
+
+A strategy to build and organize your CSS code.
+
+**Think** about your layout before writing any CSS. Try to use *component-driven design*, create modular building blocks that can make up the interfaces, that are independent and reusable within and across projects.
+
+**Build** the layout using clear and consistent structure for naming classes. A popular system is *BEM* (Block Element Modifier):
+- BLOCK is a standalone component that has meaning on its own and can be used anywhere.
+- ELEMENT ia a part of a block that has no meaning on its own.
+- MODIFIER is a different version of a block or an element.
+
+```css
+.block {}
+.block__element {}
+.block__element--modifier {}
+.block--modifier {}
+```
+
+Using this kind of system crates low specificity selectors as they only contain a single class.
+
+```html
+<a class="btn recipe__btn btn--round" href="#">
+```
+
+**Architect** create a logical structure for your CSS files. One possible approach it the *7-1 Pattern*. There are 7 folders for partial SASS files and 1 main SASS file to import all others into a compiled CSS file. The seven folders are:
+- **base** the basic project definitions
+- **components** all the components, a single file each
+- **layout** overall layout
+- **pages** styles for specific pages
+- **themes** if implementing different themes they go here
+- **abstracts** all non CSS output, like mixins or variables
+- **vendors** all third party styles
+
