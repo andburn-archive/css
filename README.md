@@ -266,6 +266,20 @@ float: left | right
 
 **Absolute** Removed from normal flow. Has no impact on surrounding content or elements. It is positioned inside its container using *top, bottom, left, right* properties.
 
+---
+
+**ASIDE** 
+When using `float` the container may collapse losing background properties. Using a clearfix technique will solve this.
+
+```css
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+```
+
+---
 
 #### Stacking Context
 
@@ -308,3 +322,85 @@ Using this kind of system crates low specificity selectors as they only contain 
 - **abstracts** all non CSS output, like mixins or variables
 - **vendors** all third party styles
 
+## 4 - Sass
+
+Sass is a CSS preprocessor, that extends CSS adding more powerful features onto the basic language.
+- Variables
+- Nesting *selectors inside each other*
+- Operators *mathematical operations*
+- Partials & Imports
+- Mixins *reusable CSS modules*
+- Functions
+- Extends *allows selectors to inherit common declarations*
+- Control Directives *conditional and loops, mostly used in libraries*
+
+Supports two syntax variants. Original SASS syntax removes semi-colons and braces, and uses indentation instead. SCSS syntax is the same as regular CSS with Sass related additions.
+
+Ampersand `&` symbol is used to give the current selector at the defined point in the nested definition.
+
+```scss
+.navigation {
+  background-color: green;
+  li {
+      display: inline;
+
+      &:first-child {
+      // ==> .navigation li:first-child
+          margin: 0;
+      }
+  }
+}
+```
+
+Sass built-in functions `lighten` and `darken` can be applied to a color to adjust its value.
+
+Mixins provide us with the ability to create reusable chunks of CSS code. They can also take arguments making them even more reusable.
+
+```scss
+@mixin text-style($size) {
+    font-weight: bold;
+    font-size: $size;
+}
+
+a {
+    text-decoration: none;
+    @include text-style(20);
+}
+```
+
+Functions can be used to produce a value after some calculation or comparison for example.
+```scss
+@function divide($a, $b) {
+    @return $a / $b;
+}
+
+.main {
+    margin: divide(20, 2) * 1px;
+}
+```
+
+Extends can be used when related selectors have a common base. The selectors will extend this base. The generated CSS will create this base rule with the proper selectors.
+
+Unlike a mixin the common code isn't inserted into the extended rules, but their selectors are added to the common rule.
+
+```scss
+%btn-base {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-main {
+    @extends btn-base;
+    // ...
+}
+
+.btn-ok {
+    @extends btn-base;
+    // ...
+}
+```
+
+### Sass Notes
+
+- can use hex colors (in variables) and place into CSS `rgba` function `rgba($color, 0.5)`
