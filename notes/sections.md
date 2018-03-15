@@ -393,7 +393,3 @@ Unlike a mixin the common code isn't inserted into the extended rules, but their
     // ...
 }
 ```
-
-### Sass Notes
-
-- can use hex colors (in variables) and place into CSS `rgba` function `rgba($color, 0.5)`
