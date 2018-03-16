@@ -259,21 +259,6 @@ float: left | right
 
 **Absolute** Removed from normal flow. Has no impact on surrounding content or elements. It is positioned inside its container using *top, bottom, left, right* properties.
 
----
-
-**ASIDE** 
-When using `float` the container may collapse losing background properties. Using a clearfix technique will solve this.
-
-```css
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-```
-
----
-
 #### Stacking Context
 
 Some CSS properties can create stacking contexts, *i.e.* vertically stacked layers allowing elements to be drawn on top of one another.
@@ -393,3 +378,15 @@ Unlike a mixin the common code isn't inserted into the extended rules, but their
     // ...
 }
 ```
+
+## 5 - Natours Part Two <a name="s5"></a>
+
+### Responsive Design Principles
+
+1. Fluid Grids and Layouts
+  - Float Layouts (best browser support)
+  - Flexbox
+  - CSS Grid
+2. Flexible/Responsive Images
+3. Media Queries
+
