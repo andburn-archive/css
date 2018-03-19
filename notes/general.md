@@ -14,7 +14,9 @@
   clear: both;  
 }
 ```
-- use attribute selector `[attrib="term"] {` to select based on the value of an attribute [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
+- use attribute selector `[attrib="term"] {` to select based on the value of an attribute ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors))
+- `background-clip: text` can be used to clip a background color, gradient or image to a piece of text, the text color needs to be `transparent` so it doesn't block the background.
+- `outline` and associated properties create a border around an element that takes up no space and are drawn outside of an elements content ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/outline))
 
 ## Sass
 
