@@ -2,4 +2,6 @@
 /.sass-cache
 /resources
 /natours/img
-/natours/css
+/natours/css/style.css*
+/natours/css/linea.css*
+/natours/fonts

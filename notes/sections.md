@@ -394,6 +394,6 @@ Unlike a mixin the common code isn't inserted into the extended rules, but their
 
 The notion of *utility* classes in the `_utilities` file, allows us to keep components and elements independent and reusable. A title element may require different margins in different contexts, by adding a specific utility class (that applies only a single margin value) we can do this while keeping the elements independent.
 
----
-
 For flexible images we should try to define dimensions as percentages.
+
+Its ok to use small pixel values, like less than `5px`, as rounding on small relative values is unlikely to make a huge difference to the design.

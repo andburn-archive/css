@@ -17,6 +17,8 @@
 - use attribute selector `[attrib="term"] {` to select based on the value of an attribute ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors))
 - `background-clip: text` can be used to clip a background color, gradient or image to a piece of text, the text color needs to be `transparent` so it doesn't block the background.
 - `outline` and associated properties create a border around an element that takes up no space and are drawn outside of an elements content ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/outline))
+- the direct child selector, selects only first level of children not any grand-children etc. `.container > *` will select all direct of children of `container`, `.section1 > div` selects only the direct div children
+- linear gradient function `linear-gradient(to right, $color1, $color2);` can be specified with directions `to right` or degrees `90deg`
 
 ## Sass
 
