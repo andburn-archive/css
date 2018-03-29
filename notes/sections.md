@@ -397,3 +397,6 @@ The notion of *utility* classes in the `_utilities` file, allows us to keep comp
 For flexible images we should try to define dimensions as percentages.
 
 Its ok to use small pixel values, like less than 3 or 4 `px`, as rounding on small relative values is unlikely to make a huge difference to the design.
+
+The HTML5 `video` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) can take a number of attributes defining the initial video state e.g. `autoplay`, `loop`, `muted`.
+It can also take a number of `source` child elements providing different formats of the video.

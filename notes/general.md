@@ -22,7 +22,12 @@
 - 3D transforms are possible with `perspective` and `backface-visibility` properties ([Ref](https://3dtransforms.desandro.com/), [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective)). With `perspective` we can set a nominal distance to the user in order for transforms to give a 3D effect. Using `backface-visibility` the back of a 3D transformed element can be hidden.
 - `background-image` allows multiple definitions for example an image and a gradient. Then using `background-blend-mode` they can be blended together in different ways.
 - `border-radius` can be lost on parent when there is a background image on a child, can be fixed with `overflow: hidden` on the parent.
-
+- `shape-outside` allows wrapping content around a floated element according to a defined shape, rather the default margin box (rectangle). Float needs to have dimensions height and width ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside)). Not supported IE/Edge 9-2018.
+- when trying to add space around a floated element avoid margin and padding and use a transform to move it.
+- it is only possible to have one transform on an element, so if multiple transforms are defined the cascade will resolve only the highest precedence one only.
+- transforming transitions need to match, e.g. normal state `translate(50%, 50%)` and hover `translateY(0)` won't work as intended should be `translate(50%, 0)`
+- the `filter` property adds graphical effects like `blur`, `grayscale` etc.
+- `object-fit` allows an image or video to be fitted to a container using various constraints e.g. aspect ratio. `object-position` complements this allowing positioning of the elements like `background-image` does.
 
 ## Sass
 
