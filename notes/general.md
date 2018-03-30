@@ -42,6 +42,8 @@
 - `visibility: hidden` doesn't draw an element, but it affects layout as if it were drawn, it isn't possible to for the element to receive focus either.
 - forms require an actual button element for submits
 - its common practice to have utility classes be defined as `!important` so they get they are applied with highest precedence
+- an `inline-block` only takes up the space of its contents, unlike a `block` which takes up 100% of available.
+- even up two columns by defining width on one at least, and floating to the appropriate side to correct the spacing
 
 ## Sass
 
