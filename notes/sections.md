@@ -400,3 +400,9 @@ Its ok to use small pixel values, like less than 3 or 4 `px`, as rounding on sma
 
 The HTML5 `video` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) can take a number of attributes defining the initial video state e.g. `autoplay`, `loop`, `muted`.
 It can also take a number of `source` child elements providing different formats of the video.
+
+The *checkbox hack* is a technique for creating custom checkbox and radio button styles. A label element is linked to a checkbox as normal, so clicking the label toggles the box. The new element is added as an inline child of the label and all styling can be applied to the element, while the original/default checkbox is hidden. By using the `:checked` pseudo-class the check/unchecked functionality can be replicated. It is also used anywhere a simple on/off state needs to be tracked, for example hiding showing a navigation pane.
+
+In creating the menu item hover effect, the "*solid-gradient*" trick is used like in the booking form. This time the `background-size` is increased so the solid half is pushed outside the bounds of the box. On hover, changing `background-position` to 100% or *right* moves the solid color back fully into to the box with the added advantage that the property can be animated with transition.
+
+Can use custom easing functions on transitions using bezier curves, `cubic-bezier(x1, y1, x2, y2)`. Useful sites like [easings](https://easings.net) and [cubic-bezier](http://cubic-bezier.com/) provide tools to create and visualize the functions.

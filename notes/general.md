@@ -44,6 +44,9 @@
 - its common practice to have utility classes be defined as `!important` so they get they are applied with highest precedence
 - an `inline-block` only takes up the space of its contents, unlike a `block` which takes up 100% of available.
 - even up two columns by defining width on one at least, and floating to the appropriate side to correct the spacing
+- `position: fixed` is similar to absolute in that it is removed from normal flow and positioned absolutely, it then holds that position as the pages moves/scrolls
+- `background-origin` specifies how the background is positioned relative a box scheme (independent of the elements box scheme), three options `border-box`, `padding-box` and `content-box`.
+- `transform-origin` is similar and defines the location where transform occur e.g. rotations.
 
 ## Sass
 
@@ -60,4 +63,4 @@
   ```
 - partials use leading underscore filename and are imported with `@import path/filename`, underscore and file extension omitted
 - math operations can only work with the same units (for mixed units see CSS `calc`, need to escape SASS variables with `#{$var1}`)
-
+- **idea**: use `z-index` variables or mixins to create layers that can be assigned to
