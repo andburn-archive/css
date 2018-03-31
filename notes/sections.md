@@ -406,3 +406,15 @@ The *checkbox hack* is a technique for creating custom checkbox and radio button
 In creating the menu item hover effect, the "*solid-gradient*" trick is used like in the booking form. This time the `background-size` is increased so the solid half is pushed outside the bounds of the box. On hover, changing `background-position` to 100% or *right* moves the solid color back fully into to the box with the added advantage that the property can be animated with transition.
 
 Can use custom easing functions on transitions using bezier curves, `cubic-bezier(x1, y1, x2, y2)`. Useful sites like [easings](https://easings.net) and [cubic-bezier](http://cubic-bezier.com/) provide tools to create and visualize the functions.
+
+Multiple column layout is supported in most modern browsers, some properties are missing from firefox, however. Its possible to set the number of columns, the gutter and separator.
+
+```css
+column-count: 2;
+column-gap: 6px;
+column-rule: 1px solid grey;
+```
+
+A related new property is `hyphens: manual | auto | none` which can calculated hyphenation on wrapped text. Not currently supported by Chrome on windows.
+
+By using the `:target` pseudo class to select an element when it is the *hash fragment* of the url (`example.com/index.html#contact`) we can utilize CSS navigation content, like pure CSS popups or flyouts.

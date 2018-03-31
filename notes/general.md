@@ -47,6 +47,7 @@
 - `position: fixed` is similar to absolute in that it is removed from normal flow and positioned absolutely, it then holds that position as the pages moves/scrolls
 - `background-origin` specifies how the background is positioned relative a box scheme (independent of the elements box scheme), three options `border-box`, `padding-box` and `content-box`.
 - `transform-origin` is similar and defines the location where transform occur e.g. rotations.
+- the `:target` pseudo class selects an element when it is the *hash fragment* of the url e.g. `example.com/index.html#contact`
 
 ## Sass
 
